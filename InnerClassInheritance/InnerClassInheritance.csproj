@@ -67,7 +67,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParentBase.ChildBase.cs" />
     <Compile Include="ParentBase.cs" />
+    <Compile Include="ParentDerived.ChildDerived.cs" />
     <Compile Include="ParentDerived.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

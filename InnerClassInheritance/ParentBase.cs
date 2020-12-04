@@ -5,7 +5,7 @@ using System.Text;
 
 namespace InnerClassInheritance
 {
-    public class ParentBase
+    public abstract partial class ParentBase
     {
         protected  ChildBase _child;
         public int N1 { get; set; }
@@ -19,17 +19,12 @@ namespace InnerClassInheritance
         {
             _child.Do1();
         }
-        protected class ChildBase
+
+        protected virtual void Do1()
         {
-            protected ParentBase _parent;
-            public ChildBase(ParentBase parent)
-            {
-                _parent = parent;
-            }
-            public virtual void Do1()
-            {
-                _parent.N1++;
-            }
+            _child.Do1();
         }
+
+        protected abstract void Do2();
     }
 }

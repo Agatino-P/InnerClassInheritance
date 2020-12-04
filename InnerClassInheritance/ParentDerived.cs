@@ -1,6 +1,6 @@
 ﻿namespace InnerClassInheritance
 {
-    public class ParentDerived : ParentBase
+    public partial class ParentDerived : ParentBase
     {
         protected new ChildDerived _child;
         public int N2 { get; set; }
@@ -11,27 +11,17 @@
         }
         public override void Do()
         {
-            base.Do();
-            _child.Do2();
+            Do1();
+            Do2();
         }
 
-        protected class ChildDerived : ChildBase
+        protected override void Do1()
         {
-            private new ParentDerived _parent;
-
-            public ChildDerived(ParentDerived parent) : base(parent)
-            {
-                _parent = parent;
-            }
-
-            public override void Do1()
-            {
-                _parent.N1--;
-            }
-            public virtual void Do2()
-            {
-                _parent.N2--;
-            }
+            N1--;
+        }
+        protected override void Do2()
+        {
+            _child.Do2();
         }
     }
 }
